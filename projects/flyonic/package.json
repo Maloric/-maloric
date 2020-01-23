@@ -1,9 +1,24 @@
 {
-  "name": "@maloric/flyonic",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@ionic/angular": "^4.11.2"
-  }
+    "name": "@maloric/flyonic",
+    "version": "1.0.0",
+    "peerDependencies": {
+        "@angular/common": "^8.2.14",
+        "@angular/core": "^8.2.14",
+        "@ionic/angular": "^4.11.2"
+    },
+    "author": {
+        "email": "jamie@maloric.com",
+        "name": "Jamie Morris",
+        "url": "http://www.medium.com/@maloric"
+    },
+    "description": "A handful of (subjectively) useful Ionic components and services.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Maloric/-maloric/tree/master/projects/flyonic"
+    },
+    "keywords": [
+        "Ionic",
+        "Angular",
+        "Components"
+    ]
 }
