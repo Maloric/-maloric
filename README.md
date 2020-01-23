@@ -1,27 +1,12 @@
 # Maloric
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+I'll probably come to regret the dumb project name later, but for now this is a dumping ground for a couple of different Typescript / JavaScript projects that I want to maintain out in the open:
 
-## Development server
+-   Testility - a few useful testing tools that are mostly framework agnostic, except for the DummyComponent for Angular.
+-   Flyonic - a handful of useful components that help me keep my Ionic apps DRY (Don't Repeat Yourself)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+If you think any of this stuff is remotely useful, feel free to use it, modify it or redistribute, as long as you obey the MIT license. If you do not, the MIT Gremlins will find you.
 
-## Code scaffolding
+And if you are having trouble sleeping at night, go read my blog at www.medium.com/@maloric. I also Tweet from time to time under my nom de plume: @Maloric85.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Ciao!
