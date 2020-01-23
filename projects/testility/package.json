@@ -1,0 +1,6 @@
+{
+    "name": "@maloric/testility",
+    "version": "1.0.0",
+    "peerDependencies": {},
+    "main": "./src/lib/public-api.ts"
+}
