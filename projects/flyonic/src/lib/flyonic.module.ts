@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ListComponent, MultiListComponent, ListModule } from './components';
+import { ListModule } from './components/list.module';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +7,6 @@ import { CommonModule } from '@angular/common';
     declarations: [],
     imports: [CommonModule, IonicModule, ListModule],
     providers: [],
-    exports: [ListComponent, MultiListComponent]
+    exports: [ListModule]
 })
 export class FlyonicModule {}
