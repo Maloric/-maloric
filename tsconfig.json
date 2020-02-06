@@ -15,9 +15,7 @@
         "lib": ["es2018", "dom"],
         "paths": {
             "flyonic": ["dist/flyonic"],
-            "flyonic/*": ["dist/flyonic/*"],
-            "testility": ["dist/testility"],
-            "testility/*": ["dist/testility/*"]
+            "flyonic/*": ["dist/flyonic/*"]
         }
     },
     "angularCompilerOptions": {

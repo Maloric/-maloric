@@ -8,7 +8,6 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "publish:testility": "ng build testility && cp projects/testility/LICENSE.md dist/testility/ && cd dist/testility && npm publish --access=public",
         "publish:flyonic": "ng build flyonic && cp projects/flyonic/LICENSE.md dist/flyonic/ && cd dist/flyonic && npm publish --access=public"
     },
     "private": false,
