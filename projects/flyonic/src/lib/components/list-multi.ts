@@ -17,8 +17,11 @@ import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/co
             [items]="items"
             [getRouterLink]="getRouterLink"
             [activeStyleField]="activeStyleField"
+            [isRowActive]="isRowActive"
             [showDelete]="false"
             (itemSelect)="itemSelect.emit($event)"
+            [groupBy]="groupBy"
+            [groupNameField]="groupNameField"
         ></fly-list>
     `
 })
@@ -26,7 +29,10 @@ export class MultiListComponent {
     @Input() template: TemplateRef<any>;
     @Input() items: { name: string; cost: number }[];
     @Input() getRouterLink: (item: any) => string[];
+    @Input() isRowActive: (item: any) => boolean;
     @Input() activeStyleField = null;
+    @Input() groupBy: string = null;
+    @Input() groupNameField: string = null;
 
     @Output() itemSelect = new EventEmitter();
     @Output() increment = new EventEmitter();
