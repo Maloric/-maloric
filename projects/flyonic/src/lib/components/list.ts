@@ -37,7 +37,9 @@ interface ItemGroups {
                         *ngIf="!getRouterLink"
                         lines="full"
                         [class.alt]="i % 2 === 0"
-                        [class.active]="!!activeStyleField && !!item[activeStyleField]"
+                        [class.active]="
+                            (isRowActive && isRowActive(item)) || (!!activeStyleField && !!item[activeStyleField])
+                        "
                         (click)="itemSelect.emit(item)"
                     >
                         <ng-template
@@ -63,6 +65,7 @@ export class ListComponent implements OnChanges {
     @Input() groupBy: string = null;
     @Input() showDelete = true;
     @Input() activeStyleField: string = null;
+    @Input() isRowActive: (item: any) => boolean;
     @Input() groupNameField: string = null;
 
     @Output() itemSelect = new EventEmitter();
