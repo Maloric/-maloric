@@ -26,7 +26,9 @@ interface ItemGroups {
                         [routerLink]="getRouterLink(item)"
                         lines="full"
                         [class.alt]="i % 2 === 0"
-                        [class.active]="!!activeStyleField && !!item[activeStyleField]"
+                        [class.active]="
+                            (isRowActive && isRowActive(item)) || (!!activeStyleField && !!item[activeStyleField])
+                        "
                     >
                         <ng-template
                             [ngTemplateOutlet]="template || defaultTemplate"
