@@ -1,6 +1,10 @@
 import { ModalController } from '@ionic/angular';
 import { ModalOptions } from '@ionic/core';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+    providedIn: 'root'
+})
 export class Modal {
     constructor(private modalController: ModalController) {}
 
