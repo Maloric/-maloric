@@ -39,7 +39,7 @@ export type ModalConfig = Partial<Pick<ModalOptions, 'component'>> & {
     beforeDismiss?: any;
     afterDismiss?: any;
     props?: {
-        contentTempate?: TemplateRef<any>;
+        contentTemplate?: TemplateRef<any>;
         buttonsTemplate?: TemplateRef<any>;
         title?: string;
     };
