@@ -1,17 +1,22 @@
-import { MockPromiseWrapper, RANDOM_STRING } from 'testility';
+import { MockPromiseWrapper, RANDOM_STRING } from '@maloric/testility';
 import { InputAlert } from './input-alert';
 
 describe('InputAlert', () => {
   let unit: InputAlert;
   let mockAlertController: any;
   let mockAlert: MockPromiseWrapper<any>;
+  let mockValidationAlert: MockPromiseWrapper<any>;
   let value: string;
 
   beforeEach(() => {
     mockAlert = new MockPromiseWrapper();
     mockAlert.result = jasmine.createSpyObj('alertSpy', ['present']);
+
+    mockValidationAlert = new MockPromiseWrapper();
+    mockValidationAlert.result = jasmine.createSpyObj('validationAlertSpy', ['present']);
+
     mockAlertController = {
-      create: jasmine.createSpy().and.returnValue(mockAlert.promise)
+      create: jasmine.createSpy().and.returnValues(mockAlert.promise, mockValidationAlert.promise)
     };
     unit = new InputAlert(mockAlertController);
   });
@@ -47,7 +52,6 @@ describe('InputAlert', () => {
       expect(btn).toBeTruthy();
 
       await mockAlert.resolve(mockAlert.result);
-
       expect(mockAlert.result.present).toHaveBeenCalled();
 
       value = RANDOM_STRING.getOne();
@@ -55,6 +59,28 @@ describe('InputAlert', () => {
 
       const actualValue = await result;
       expect(actualValue).toEqual(value);
+    });
+
+    it('should alert the user if they don\'t provide a required value', async (done) => {
+      await mockAlert.resolve(mockAlert.result);
+      expect(mockAlert.result.present).toHaveBeenCalled();
+
+      const config = mockAlertController.create.calls.mostRecent().args[0];
+      const btn = config.buttons.find((x: any) => !!x.handler);
+
+      btn.handler({ value: '' });
+
+      expect(mockAlertController.create).toHaveBeenCalledTimes(2);
+      const validationConfig = mockAlertController.create.calls.mostRecent().args[0];
+      expect(validationConfig.message).toEqual( "Value can't be blank.");
+      
+      await mockValidationAlert.resolve(mockValidationAlert.result);
+
+      setTimeout(() => {
+        expect(mockValidationAlert.result.present).toHaveBeenCalled();
+        done();
+      },0)
+
     });
   });
 });

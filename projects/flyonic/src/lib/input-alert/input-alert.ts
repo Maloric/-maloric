@@ -35,7 +35,7 @@ export class InputAlert {
                         {
                             text: 'Ok',
                             handler: async data => {
-                                if (required && data.forceName === '') {
+                                if (required && !data.value) {
                                     const alert = await this.alertController.create({
                                         message: "Value can't be blank.",
                                         buttons: [
@@ -44,6 +44,7 @@ export class InputAlert {
                                             }
                                         ]
                                     });
+
                                     alert.present();
                                     return false;
                                 }

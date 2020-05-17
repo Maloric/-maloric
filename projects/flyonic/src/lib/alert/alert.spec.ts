@@ -1,4 +1,4 @@
-import { MockPromiseWrapper, RANDOM_STRING } from 'testility';
+import { MockPromiseWrapper, RANDOM_STRING } from '@maloric/testility';
 import { Alert } from './alert';
 
 describe('Alert', () => {

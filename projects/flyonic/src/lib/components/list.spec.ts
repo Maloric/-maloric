@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng2-mock-component';
-import { RANDOM_NUMBER, RANDOM_STRING, TestDataFactory } from 'testility';
+import { RANDOM_NUMBER, RANDOM_STRING, TestDataFactory } from '@maloric/testility';
 import { ListComponent } from './list';
 import { IonicModule } from '@ionic/angular';
 
