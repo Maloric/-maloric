@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { ListModule } from './components/list.module';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-    declarations: [],
+    declarations: [ModalComponent],
     imports: [CommonModule, IonicModule, ListModule],
     providers: [],
-    exports: [ListModule]
+    exports: [ListModule, ModalComponent]
 })
 export class FlyonicModule {}
