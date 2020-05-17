@@ -1,6 +1,7 @@
 import { ModalController } from '@ionic/angular';
 import { ModalOptions } from '@ionic/core';
-import { Injectable } from '@angular/core';
+import { Injectable, TemplateRef } from '@angular/core';
+import { ModalComponent } from './modal.component';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class Modal {
 
     async show(config: ModalConfig) {
         let modal = await this.modalController.create({
-            ...config,
+            component: config.component || ModalComponent,
             backdropDismiss: true,
             showBackdrop: true,
             componentProps: {
@@ -25,7 +26,8 @@ export class Modal {
                     if (config.afterDismiss) {
                         config.afterDismiss();
                     }
-                }
+                },
+                ...config.props
             }
         });
 
@@ -33,7 +35,12 @@ export class Modal {
     }
 }
 
-export type ModalConfig = Pick<ModalOptions, 'component'> & {
+export type ModalConfig = Partial<Pick<ModalOptions, 'component'>> & {
     beforeDismiss?: any;
     afterDismiss?: any;
+    props: {
+        contentTempate?: TemplateRef<any>;
+        buttonsTemplate?: TemplateRef<any>;
+        title?: string;
+    };
 };
