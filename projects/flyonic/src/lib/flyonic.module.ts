@@ -8,6 +8,7 @@ import { ModalComponent } from './modal/modal.component';
     declarations: [ModalComponent],
     imports: [CommonModule, IonicModule, ListModule],
     providers: [],
-    exports: [ListModule, ModalComponent]
+    exports: [ListModule, ModalComponent],
+    entryComponents: [ModalComponent]
 })
 export class FlyonicModule {}

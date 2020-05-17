@@ -108,4 +108,12 @@ Here is an example:
       }
     }
 
+### Backdrop Opacity
+
+If, like me, you prefer a transparent backdrop for your modal, add something like this to your global stylesheet. I haven't added it to the component because it would have to be added globally and I don't want to mess up your styles.
+
+    ion-modal {
+        --background: none !important;
+    }
+
 // TODO: I am lazy and need to finish writing this. If you get this far before I finish, contact me on Twitter for help: @maloric85

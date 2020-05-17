@@ -18,7 +18,9 @@ import { ModalController } from '@ionic/angular';
                 <ng-template [ngTemplateOutlet]="contentTemplate || defaultContentTemplate"></ng-template>
             </ion-card-content>
         </ion-card>
-        <ng-template [ngTemplateOutlet]="buttonsTemplate || defaultButtonsTemplate"></ng-template>
+        <div class="buttons">
+            <ng-template [ngTemplateOutlet]="buttonsTemplate || defaultButtonsTemplate"></ng-template>
+        </div>
     `,
     styles: [
         `
@@ -44,7 +46,7 @@ import { ModalController } from '@ionic/angular';
         `
     ]
 })
-export class ModalComponent extends ModalController {
+export class ModalComponent {
     @Input()
     title: string = '';
 
@@ -56,10 +58,16 @@ export class ModalComponent extends ModalController {
 
     @HostListener('click')
     onClick() {
-        this.dismiss();
+        this.modalController.dismiss();
     }
 
     preventClose(e) {
         e.stopPropagation();
     }
+
+    dismiss(...args: any[]) {
+        this.modalController.dismiss(...args);
+    }
+
+    constructor(private modalController: ModalController) {}
 }

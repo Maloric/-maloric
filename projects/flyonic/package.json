@@ -1,6 +1,6 @@
 {
     "name": "@maloric/flyonic",
-    "version": "1.0.10",
+    "version": "1.0.15",
     "peerDependencies": {
         "@angular/common": "^8.*.*",
         "@angular/core": "^8.*.*",
