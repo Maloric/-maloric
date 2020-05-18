@@ -16,6 +16,8 @@ describe('NumSelector', () => {
         fixture = TestBed.createComponent(NumSelectorComponent);
         component = fixture.componentInstance;
         element = fixture.nativeElement;
+
+        spyOn(component.change, 'emit');
     });
 
     const refresh = () => {
@@ -39,6 +41,7 @@ describe('NumSelector', () => {
             element.querySelector(buttonSelector).click();
             refresh();
             expect(value).toBe(x);
+            expect(component.change.emit).toHaveBeenCalledWith(x);
         });
     };
 

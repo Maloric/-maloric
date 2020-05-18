@@ -55,14 +55,19 @@ export class NumSelectorComponent implements OnChanges {
     increment() {
         if ((!isNaN(this.max) && this.value < this.max) || isNaN(this.max)) {
             this.value++;
-            this.value$.next(this.value);
+            this.update();
         }
     }
 
     decrement() {
         if ((!isNaN(this.min) && this.value > this.min) || isNaN(this.min)) {
             this.value--;
-            this.value$.next(this.value);
+            this.update();
         }
+    }
+
+    private update() {
+        this.value$.next(this.value);
+        this.change.emit(this.value);
     }
 }
